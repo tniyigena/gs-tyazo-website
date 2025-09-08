@@ -5,6 +5,134 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GS TYAZO School</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Navigation and Dropdown Styling */
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+      background: #f4f4f4;
+      padding: 10px 20px;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      padding: 10px 15px;
+      display: block;
+      color: #000;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      color: #007BFF;
+    }
+
+    nav ul li .dropdown-content {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background: #fff;
+      min-width: 220px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 6px;
+      z-index: 1000;
+    }
+
+    nav ul li .dropdown-content li a {
+      padding: 10px;
+      color: #007BFF;
+    }
+
+    nav ul li .dropdown-content li a:hover {
+      background: #f0f0f0;
+    }
+
+    /* Show dropdown on hover */
+    nav ul li.dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Other page styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 20px;
+      background: #e0f7fa;
+    }
+
+    header img.logo {
+      width: 100px;
+      height: auto;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #c8e6c9;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      flex: 1 1 200px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .gallery {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 250px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e0f7fa;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+  </style>
 </head>
 <body>
   <!-- Header -->
@@ -22,7 +150,17 @@
       <li><a href="#activities">Activities</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
-      <li><a href="#exams">Exams Portal</a></li> <!-- Added Exams Portal -->
+
+      <!-- Exams Portal Dropdown -->
+      <li class="dropdown">
+        <a href="#">Exams Portal ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="math_exam.html">Computer Science Beginning Test</a></li>
+          <li><a href="english_exam.html">ICT Exam</a></li>
+          <li><a href="science_exam.html">ICT S4 Exam</a></li>
+          <li><a href="history_exam.html">ICT S5 Exam</a></li>
+        </ul>
+      </li>
     </ul>
   </nav>
 
@@ -82,18 +220,6 @@
     </div>
   </section>
 
-  <!-- Exams Section -->
-  <section id="exams">
-    <h2>Exams,CAT and Assignment Section</h2>
-    <p>Select an exam below to get started:</p>
-    <ul>
-      <li><a href="math_exam.html">Computer Science Beginning test</a></li>
-      <li><a href="english_exam.html">ICT Exam</a></li>
-      <li><a href="science_exam.html">ICT S4Exam</a></li>
-      <li><a href="history_exam.html">ICT S5 Exam</a></li>
-    </ul>
-  </section>
-
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
@@ -108,7 +234,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
