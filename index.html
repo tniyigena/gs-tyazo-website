@@ -6,7 +6,7 @@
   <title>GS TYAZO School</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* General Body Styling */
+    /* --- Existing styles --- */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -15,7 +15,6 @@
       color: #333;
     }
 
-    /* Header */
     header {
       text-align: center;
       padding: 30px 20px;
@@ -41,7 +40,6 @@
       font-weight: 500;
     }
 
-    /* Navigation Menu */
     nav ul {
       list-style: none;
       padding: 0;
@@ -70,7 +68,6 @@
       background-color: #0056b3;
     }
 
-    /* Dropdown Menu */
     nav ul li .dropdown-content {
       display: none;
       position: absolute;
@@ -96,7 +93,6 @@
       display: block;
     }
 
-    /* Hero Banner */
     .hero {
       text-align: center;
       padding: 60px 20px;
@@ -115,7 +111,6 @@
       font-weight: 500;
     }
 
-    /* Section Styling */
     section {
       padding: 50px 20px;
       max-width: 1100px;
@@ -131,7 +126,6 @@
       padding-bottom: 5px;
     }
 
-    /* Cards */
     .cards {
       display: flex;
       flex-wrap: wrap;
@@ -168,7 +162,6 @@
       color: #333;
     }
 
-    /* Download Buttons */
     .card a {
       display: inline-block;
       margin-top: 10px;
@@ -185,7 +178,6 @@
       background: #0056b3;
     }
 
-    /* Activities & List */
     ul {
       padding-left: 20px;
     }
@@ -195,7 +187,6 @@
       font-size: 18px;
     }
 
-    /* Gallery */
     .gallery {
       display: flex;
       gap: 15px;
@@ -216,7 +207,6 @@
       transform: scale(1.05);
     }
 
-    /* Contact */
     section#contact a {
       color: #007BFF;
       font-weight: bold;
@@ -227,13 +217,81 @@
       text-decoration: underline;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 25px;
       background: linear-gradient(90deg, #4facfe, #00f2fe);
       color: white;
       font-weight: bold;
+    }
+
+    /* --- Chatbot Styles --- */
+    #chatbot-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      z-index: 10000;
+    }
+
+    #chatbot-window {
+      display: none;
+      position: fixed;
+      bottom: 90px;
+      right: 20px;
+      width: 350px;
+      max-height: 500px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      z-index: 10000;
+      flex-direction: column;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #chatbot-header {
+      background-color: #007BFF;
+      color: white;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+    }
+
+    #chatbot-messages {
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    #chatbot-input input {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #chatbot-input button {
+      padding: 10px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
     }
   </style>
 </head>
@@ -256,7 +314,6 @@
       <li><a href="#software">Software Tools</a></li>
       <li><a href="#contact">Contact</a></li>
 
-      <!-- Exams Portal Dropdown -->
       <li class="dropdown">
         <a href="#">Exams Portal ▼</a>
         <ul class="dropdown-content">
@@ -382,6 +439,11 @@
         <h3>MySQL Database</h3>
         <a href="https://dev.mysql.com/downloads/" target="_blank">🌐 Download</a>
       </div>
+      <div class="card">
+        <img src="images/mutaz.jpg" alt="Mutaz Software Downloads">
+        <h3>www.mutaz.net</h3>
+        <a href="https://www.mutaz.net" target="_blank">🌐 Download Software</a>
+      </div>
     </div>
   </section>
 
@@ -397,8 +459,54 @@
   <footer>
     <p>&copy; 2025 GS TYAZO | Designed by Theogene</p>
   </footer>
+
+  <!-- Chatbot Button -->
+  <button id="chatbot-button">💬</button>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-window">
+    <div id="chatbot-header">GS TYAZO Chatbot</div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input type="text" id="chatbot-text" placeholder="Type your message..." />
+      <button id="chatbot-send">Send</button>
+    </div>
+  </div>
+
+  <script>
+    // Chatbot toggle
+    const chatbotBtn = document.getElementById('chatbot-button');
+    const chatbotWindow = document.getElementById('chatbot-window');
+    const chatbotMessages = document.getElementById('chatbot-messages');
+    const chatbotInput = document.getElementById('chatbot-text');
+    const chatbotSend = document.getElementById('chatbot-send');
+
+    chatbotBtn.addEventListener('click', () => {
+      chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    chatbotSend.addEventListener('click', () => {
+      const message = chatbotInput.value.trim();
+      if(message === '') return;
+
+      const userMsg = document.createElement('div');
+      userMsg.textContent = "You: " + message;
+      userMsg.style.marginBottom = "8px";
+      chatbotMessages.appendChild(userMsg);
+
+      // Simple automated response
+      const botMsg = document.createElement('div');
+      botMsg.textContent = "Bot: Hello! How can I help you today?";
+      botMsg.style.marginBottom = "8px";
+      chatbotMessages.appendChild(botMsg);
+
+      chatbotInput.value = '';
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+    });
+
+    chatbotInput.addEventListener("keypress", function(e) {
+      if(e.key === "Enter") chatbotSend.click();
+    });
+  </script>
 </body>
 </html>
-
-
-add chatbot on this code
