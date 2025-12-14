@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GS TYAZO School</title>
-  <link rel="stylesheet" href="style.css">
   <style>
-    /* General Body Styling */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -15,7 +13,6 @@
       color: #333;
     }
 
-    /* Header */
     header {
       text-align: center;
       padding: 30px 20px;
@@ -25,379 +22,172 @@
 
     header img.logo {
       width: 100px;
-      height: auto;
       border-radius: 50%;
       border: 3px solid white;
     }
 
-    header h1 {
-      margin: 10px 0 5px 0;
-      font-size: 36px;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-
-    header p {
-      font-size: 18px;
-      font-weight: 500;
-    }
-
-    /* Navigation Menu */
     nav ul {
       list-style: none;
-      padding: 0;
       margin: 0;
+      padding: 0;
       display: flex;
-      gap: 15px;
       justify-content: center;
-      background-color: #007BFF;
-    }
-
-    nav ul li {
-      position: relative;
+      gap: 15px;
+      background: #007BFF;
     }
 
     nav ul li a {
+      color: white;
       text-decoration: none;
       padding: 12px 18px;
       display: block;
-      color: white;
       font-weight: bold;
-      border-radius: 6px;
-      transition: 0.3s;
     }
 
     nav ul li a:hover {
-      background-color: #0056b3;
+      background: #0056b3;
     }
 
-    /* Dropdown Menu */
-    nav ul li .dropdown-content {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      background: #ffffff;
-      min-width: 220px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      border-radius: 8px;
-      z-index: 1000;
-    }
-
-    nav ul li .dropdown-content li a {
-      color: #007BFF;
-      padding: 10px 15px;
-    }
-
-    nav ul li .dropdown-content li a:hover {
-      background-color: #f0f8ff;
-    }
-
-    nav ul li.dropdown:hover .dropdown-content {
-      display: block;
-    }
-
-    /* Hero Banner */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(135deg, #43e97b, #38f9d7);
-      color: white;
-    }
-
-    .hero h2 {
-      font-size: 42px;
-      margin-bottom: 15px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-    }
-
-    .hero p {
-      font-size: 20px;
-      font-weight: 500;
-    }
-
-    /* Section Styling */
     section {
-      padding: 50px 20px;
+      padding: 40px 20px;
       max-width: 1100px;
       margin: auto;
     }
 
-    section h2 {
-      font-size: 32px;
-      margin-bottom: 25px;
-      color: #007BFF;
-      border-bottom: 3px solid #00f2fe;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    /* Cards */
-    .cards {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 25px;
-      justify-content: center;
-    }
-
-    .card {
-      background-color: white;
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      flex: 1 1 200px;
-      max-width: 250px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-    }
-
-    .card img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 8px;
-      margin-bottom: 12px;
-    }
-
-    .card h3 {
-      font-size: 18px;
-      color: #333;
-    }
-
-    /* Download Buttons */
-    .card a {
-      display: inline-block;
-      margin-top: 10px;
-      padding: 10px 15px;
-      background: #007BFF;
-      color: white;
-      text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background 0.3s;
-    }
-
-    .card a:hover {
-      background: #0056b3;
-    }
-
-    /* Activities & List */
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin: 10px 0;
-      font-size: 18px;
-    }
-
-    /* Gallery */
-    .gallery {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .gallery img {
-      width: 300px;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 10px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
-      transition: transform 0.3s;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    /* Contact */
-    section#contact a {
-      color: #007BFF;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    section#contact a:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
     footer {
       text-align: center;
-      padding: 25px;
+      padding: 20px;
       background: linear-gradient(90deg, #4facfe, #00f2fe);
       color: white;
       font-weight: bold;
     }
+
+    /* CHATBOT STYLES */
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      font-size: 24px;
+      padding: 12px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #chatbot {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 300px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    #chatbot-header {
+      background: #007BFF;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #chatbot-messages {
+      height: 220px;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    #chatbot-input input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+
+    #chatbot-input button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    .user { text-align: right; color: #007BFF; margin: 5px 0; }
+    .bot { text-align: left; color: #333; margin: 5px 0; }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <img src="images/logo.png" alt="GS TYAZO Logo" class="logo">
-    <h1>GS TYAZO</h1>
-    <p>Excellence in Education and Discipline</p>
-  </header>
 
-  <!-- Navigation Menu -->
-  <nav>
-    <ul>
-      <li><a href="#about">About Us</a></li>
-      <li><a href="#academics">Academics</a></li>
-      <li><a href="#activities">Activities</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#books">Books</a></li>
-      <li><a href="#software">Software Tools</a></li>
-      <li><a href="#contact">Contact</a></li>
+<header>
+  <img src="images/logo.png" class="logo" alt="GS TYAZO Logo">
+  <h1>GS TYAZO</h1>
+  <p>Excellence in Education and Discipline</p>
+</header>
 
-      <!-- Exams Portal Dropdown -->
-      <li class="dropdown">
-        <a href="#">Exams Portal ▼</a>
-        <ul class="dropdown-content">
-          <li><a href="https://forms.gle/NVk6wwQhKD8XuyqAA">Computer Science QUIZ</a></li>
-          <li><a href="https://forms.gle/Lz1TJpmSCtJX38K89">Computer Science Beginning Test</a></li>
-          <li><a href="https://forms.gle/BZJpAUsXVwBTcnjn8">ICT S6HGL QUIZ </a></li>
-          <li><a href="science_exam.html">ICT S4 Exam</a></li>
-          <li><a href="history_exam.html">ICT S5 Exam</a></li>
-        </ul>
-      </li>
-    </ul>
-  </nav>
+<section>
+  <h2>Welcome to GS TYAZO</h2>
+  <p>Shaping Future Leaders Through Knowledge and Skills.</p>
+</section>
 
-  <!-- Hero Banner -->
-  <section class="hero">
-    <h2>Welcome to GS TYAZO</h2>
-    <p>Shaping Future Leaders Through Knowledge, Discipline, and Skills</p>
-  </section>
+<footer>
+  &copy; 2025 GS TYAZO | Designed by Theogene
+</footer>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About GS TYAZO</h2>
-    <p>GS TYAZO is a secondary school dedicated to providing quality education, discipline, and skills to prepare learners for the future. We are committed to fostering academic excellence and character development.</p>
-  </section>
+<!-- CHATBOT -->
+<div id="chatbot-toggle">💬</div>
 
-  <!-- Academics Section -->
-  <section id="academics">
-    <h2>Academics</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/science.jpg" alt="Science 1">
-        <h3>Mathematics and Science Stream 1</h3>
-      </div>
-      <div class="card">
-        <img src="images/maths.jpg" alt="Science 2">
-        <h3>Mathematics and Science Stream 2</h3>
-      </div>
-      <div class="card">
-        <img src="images/economics.jpg" alt="Humanities">
-        <h3>Art and Humanities</h3>
-      </div>
-      <div class="card">
-        <img src="images/languages.jpg" alt="Combinations">
-        <h3>MCE, MCB and HGL</h3>
-      </div>
-    </div>
-  </section>
+<div id="chatbot">
+  <div id="chatbot-header">GS TYAZO Assistant <span id="chatbot-close">✖</span></div>
+  <div id="chatbot-messages"></div>
+  <div id="chatbot-input">
+    <input type="text" id="user-input" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
 
-  <!-- Activities Section -->
-  <section id="activities">
-    <h2>Co-Curricular Activities</h2>
-    <ul>
-      <li>⚽ Sports (Football, Volleyball, Basketball)</li>
-      <li>🎤 Debate and Public Speaking</li>
-      <li>💻 ICT Practice</li>
-      <li>🎶 Music and Dance</li>
-    </ul>
-  </section>
+<script>
+  const toggle = document.getElementById("chatbot-toggle");
+  const chatbot = document.getElementById("chatbot");
+  const closeBtn = document.getElementById("chatbot-close");
+  const messages = document.getElementById("chatbot-messages");
 
-  <!-- Gallery Section -->
-  <section id="gallery">
-    <h2>Our Gallery</h2>
-    <div class="gallery">
-      <img src="images/school1.jpg" alt="School Building">
-      <img src="images/school2.jpg" alt="Students in Class">
-      <img src="images/school3.jpg" alt="Sports Activity">
-    </div>
-  </section>
+  toggle.onclick = () => chatbot.style.display = "block";
+  closeBtn.onclick = () => chatbot.style.display = "none";
 
-  <!-- Books Section -->
-  <section id="books">
-    <h2>Books</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/book1.jpg" alt="Math Book">
-        <h3>ICT Content Distribution</h3>
-        <a href="Book1.xlsx" download>📥 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/book2.jpg" alt="Computer Science Book">
-        <h3>Computer Science Book</h3>
-        <a href="books/computer_science.pdf" download>📥 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/book3.jpg" alt="Economics Book">
-        <h3>Economics Book</h3>
-        <a href="books/economics.pdf" download>📥 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/book4.jpg" alt="English Book">
-        <h3>English Book</h3>
-        <a href="books/english.pdf" download>📥 Download</a>
-      </div>
-    </div>
-  </section>
+  function sendMessage() {
+    const input = document.getElementById("user-input");
+    const text = input.value.trim();
+    if (!text) return;
 
-  <!-- Software Tools Section -->
-  <section id="software">
-    <h2>Software Tools</h2>
-    <div class="cards">
-      <div class="card">
-        <img src="images/xampp.jpg" alt="XAMPP Software">
-        <h3>XAMPP (Apache Friends)</h3>
-        <a href="https://www.apachefriends.org/download_success.html" target="_blank">🌐 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/vscode.jpg" alt="VS Code">
-        <h3>Visual Studio Code</h3>
-        <a href="https://code.visualstudio.com/download" target="_blank">🌐 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/java.jpg" alt="Java JDK">
-        <h3>Java Development Kit (JDK)</h3>
-        <a href="https://www.oracle.com/java/technologies/javase-jdk17-downloads.html" target="_blank">🌐 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/python.jpg" alt="Python">
-        <h3>Python Programming Language</h3>
-        <a href="https://www.python.org/downloads/" target="_blank">🌐 Download</a>
-      </div>
-      <div class="card">
-        <img src="images/mysql.jpg" alt="MySQL">
-        <h3>MySQL Database</h3>
-        <a href="https://dev.mysql.com/downloads/" target="_blank">🌐 Download</a>
-      </div>
-    </div>
-  </section>
+    messages.innerHTML += `<div class="user">${text}</div>`;
+    input.value = "";
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:tniyigena@gmail.com">tniyigena@gmail.com</a></p>
-    <p>Phone: +250 787539136</p>
-    <p>Address: GS TYAZO, Nyamasheke District, Rwanda</p>
-  </section>
+    let reply = "Sorry, I didn't understand that.";
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 GS TYAZO | Designed by Theogene</p>
-  </footer>
+    if (text.toLowerCase().includes("hello")) reply = "Hello! Welcome to GS TYAZO 👋";
+    else if (text.toLowerCase().includes("contact")) reply = "Email: tniyigena@gmail.com | Phone: +250 787539136";
+    else if (text.toLowerCase().includes("courses")) reply = "We offer MCE, MCB, and HGL combinations.";
+    else if (text.toLowerCase().includes("location")) reply = "We are located in Nyamasheke District, Rwanda.";
+
+    setTimeout(() => {
+      messages.innerHTML += `<div class="bot">${reply}</div>`;
+      messages.scrollTop = messages.scrollHeight;
+    }, 400);
+  }
+</script>
+
 </body>
 </html>
-
-
