@@ -14,10 +14,59 @@
       background-color: #f0f4f8;
       color: #333;
     }
-    header { text-align: center; padding: 30px 20px; background: linear-gradient(90deg, #4facfe, #00f2fe); color: white; }
-    header img.logo { width: 100px; height: auto; border-radius: 50%; border: 3px solid white; }
+    header { 
+      position: relative; 
+      text-align: center; 
+      padding: 30px 20px; 
+      background: linear-gradient(90deg, #4facfe, #00f2fe); 
+      color: white; 
+    }
+    header img.logo { 
+      width: 100px; 
+      height: auto; 
+      border-radius: 50%; 
+      border: 3px solid white; 
+    }
     header h1 { margin: 10px 0 5px 0; font-size: 36px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
     header p { font-size: 18px; font-weight: 500; }
+
+    /* Top-right login */
+    #top-login {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: rgba(255,255,255,0.9);
+      padding: 8px 12px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    #top-login input {
+      padding: 6px 8px;
+      font-size: 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #top-login button {
+      padding: 6px 12px;
+      font-size: 14px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #top-login button:hover {
+      background-color: #0056b3;
+    }
+    #top-login p {
+      color: red;
+      font-size: 12px;
+      margin: 0;
+    }
+
     nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; justify-content: center; background-color: #007BFF; }
     nav ul li { position: relative; }
     nav ul li a { text-decoration: none; padding: 12px 18px; display: block; color: white; font-weight: bold; border-radius: 6px; transition: 0.3s; }
@@ -26,11 +75,14 @@
     nav ul li .dropdown-content li a { color: #007BFF; padding: 10px 15px; }
     nav ul li .dropdown-content li a:hover { background-color: #f0f8ff; }
     nav ul li.dropdown:hover .dropdown-content { display: block; }
+
     .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; }
     .hero h2 { font-size: 42px; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
     .hero p { font-size: 20px; font-weight: 500; }
+
     section { padding: 50px 20px; max-width: 1100px; margin: auto; }
     section h2 { font-size: 32px; margin-bottom: 25px; color: #007BFF; border-bottom: 3px solid #00f2fe; display: inline-block; padding-bottom: 5px; }
+
     .cards { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; }
     .card { background-color: white; padding: 20px; border-radius: 12px; text-align: center; flex: 1 1 200px; max-width: 250px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; }
     .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); }
@@ -38,20 +90,18 @@
     .card h3 { font-size: 18px; color: #333; }
     .card a { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #007BFF; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; }
     .card a:hover { background: #0056b3; }
+
     ul { padding-left: 20px; }
     ul li { margin: 10px 0; font-size: 18px; }
+
     .gallery { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
     .gallery img { width: 300px; height: 180px; object-fit: cover; border-radius: 10px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s; }
     .gallery img:hover { transform: scale(1.05); }
+
     section#contact a { color: #007BFF; font-weight: bold; text-decoration: none; }
     section#contact a:hover { text-decoration: underline; }
-    footer { text-align: center; padding: 25px; background: linear-gradient(90deg, #4facfe, #00f2fe); color: white; font-weight: bold; }
 
-    /* --- Login Form Styles --- */
-    #login .login-form { max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px; }
-    #login .login-form input { padding: 10px; font-size: 16px; border-radius: 6px; border: 1px solid #ccc; }
-    #login .login-form button { padding: 10px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 6px; cursor: pointer; }
-    #login .login-form button:hover { background-color: #0056b3; }
+    footer { text-align: center; padding: 25px; background: linear-gradient(90deg, #4facfe, #00f2fe); color: white; font-weight: bold; }
 
     /* --- Chatbot Styles --- */
     #chatbot-button { position: fixed; bottom: 20px; right: 20px; background-color: #007BFF; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 28px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10000; }
@@ -69,6 +119,14 @@
     <img src="images/logo.png" alt="GS TYAZO Logo" class="logo">
     <h1>GS TYAZO</h1>
     <p>Excellence in Education and Discipline</p>
+
+    <!-- Top-right Login Form -->
+    <div id="top-login">
+      <input type="text" id="username" placeholder="Username" />
+      <input type="password" id="password" placeholder="Password" />
+      <button id="login-btn">Login</button>
+      <p id="login-msg"></p>
+    </div>
   </header>
 
   <!-- Navigation Menu -->
@@ -80,7 +138,6 @@
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#books">Books</a></li>
       <li><a href="#software">Software Tools</a></li>
-      <li><a href="#login">Login</a></li>
       <li><a href="#contact">Contact</a></li>
       <li class="dropdown">
         <a href="#">Exams Portal ▼</a>
@@ -163,17 +220,6 @@
     </div>
   </section>
 
-  <!-- Login Section -->
-  <section id="login">
-    <h2>Login</h2>
-    <div class="login-form">
-      <input type="text" id="username" placeholder="Username" />
-      <input type="password" id="password" placeholder="Password" />
-      <button id="login-btn">Login</button>
-      <p id="login-msg" style="color:red; margin-top:10px;"></p>
-    </div>
-  </section>
-
   <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
@@ -221,7 +267,6 @@
       userMsg.style.marginBottom = "8px";
       chatbotMessages.appendChild(userMsg);
 
-      // Simple automated AI-like response
       const botMsg = document.createElement('div');
       botMsg.textContent = "Bot: Hello! I am an AI assistant. How can I help you today?";
       botMsg.style.marginBottom = "8px";
@@ -250,13 +295,4 @@
 
       // Dummy login check
       if(username === "admin" && password === "1234"){
-        loginMsg.style.color = "green";
-        loginMsg.textContent = "Login successful! Welcome " + username;
-      } else {
-        loginMsg.style.color = "red";
-        loginMsg.textContent = "Invalid username or password";
-      }
-    });
-  </script>
-</body>
-</html>
+       
