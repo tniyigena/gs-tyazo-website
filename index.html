@@ -1,1 +1,423 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>GS TYAZO School</title> <link rel="stylesheet" href="style.css"> <style> /* General Body Styling */ body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f0f4f8; color: #333; } /* Header */ header { text-align: center; padding: 30px 20px; background: linear-gradient(90deg, #4facfe, #00f2fe); color: white; } header img.logo { width: 100px; height: auto; border-radius: 50%; border: 3px solid white; } header h1 { margin: 10px 0 5px 0; font-size: 36px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); } header p { font-size: 18px; font-weight: 500; } /* Navigation Menu */ nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; justify-content: center; background-color: #007BFF; } nav ul li { position: relative; } nav ul li a { text-decoration: none; padding: 12px 18px; display: block; color: white; font-weight: bold; border-radius: 6px; transition: 0.3s; } nav ul li a:hover { background-color: #0056b3; } /* Dropdown Menu */ nav ul li .dropdown-content { display: none; position: absolute; top: 100%; left: 0; background: #ffffff; min-width: 220px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 8px; z-index: 1000; } nav ul li .dropdown-content li a { color: #007BFF; padding: 10px 15px; } nav ul li .dropdown-content li a:hover { background-color: #f0f8ff; } nav ul li.dropdown:hover .dropdown-content { display: block; } /* Hero Banner */ .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; } .hero h2 { font-size: 42px; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); } .hero p { font-size: 20px; font-weight: 500; } /* Section Styling */ section { padding: 50px 20px; max-width: 1100px; margin: auto; } section h2 { font-size: 32px; margin-bottom: 25px; color: #007BFF; border-bottom: 3px solid #00f2fe; display: inline-block; padding-bottom: 5px; } /* Cards */ .cards { display: flex; flex-wrap: wrap; gap: 25px; justify-content: center; } .card { background-color: white; padding: 20px; border-radius: 12px; text-align: center; flex: 1 1 200px; max-width: 250px; box-shadow: 0 8px 16px rgba(0,0,0,0.1); transition: transform 0.3s, box-shadow 0.3s; } .card:hover { transform: translateY(-5px); box-shadow: 0 12px 24px rgba(0,0,0,0.2); } .card img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; } .card h3 { font-size: 18px; color: #333; } /* Download Buttons */ .card a { display: inline-block; margin-top: 10px; padding: 10px 15px; background: #007BFF; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; transition: background 0.3s; } .card a:hover { background: #0056b3; } /* Activities & List */ ul { padding-left: 20px; } ul li { margin: 10px 0; font-size: 18px; } /* Gallery */ .gallery { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; } .gallery img { width: 300px; height: 180px; object-fit: cover; border-radius: 10px; box-shadow: 0 6px 12px rgba(0,0,0,0.1); transition: transform 0.3s; } .gallery img:hover { transform: scale(1.05); } /* Contact */ section#contact a { color: #007BFF; font-weight: bold; text-decoration: none; } section#contact a:hover { text-decoration: underline; } /* Footer */ footer { text-align: center; padding: 25px; background: linear-gradient(90deg, #4facfe, #00f2fe); color: white; font-weight: bold; } </style> </head> <body> <!-- Header --> <header> <img src="images/logo.png" alt="GS TYAZO Logo" class="logo"> <h1>GS TYAZO</h1> <p>Excellence in Education and Discipline</p> </header> <!-- Navigation Menu --> <nav> <ul> <li><a href="#about">About Us</a></li> <li><a href="#academics">Academics</a></li> <li><a href="#activities">Activities</a></li> <li><a href="#gallery">Gallery</a></li> <li><a href="#books">Books</a></li> <li><a href="#software">Software Tools</a></li> <li><a href="#contact">Contact</a></li> <!-- Exams Portal Dropdown --> <li class="dropdown"> <a href="#">Exams Portal ▼</a> <ul class="dropdown-content"> <li><a href="https://forms.gle/NVk6wwQhKD8XuyqAA">Computer Science QUIZ</a></li> <li><a href="https://forms.gle/Lz1TJpmSCtJX38K89">Computer Science Beginning Test</a></li> <li><a href="https://forms.gle/BZJpAUsXVwBTcnjn8">ICT S6HGL QUIZ </a></li> <li><a href="science_exam.html">ICT S4 Exam</a></li> <li><a href="history_exam.html">ICT S5 Exam</a></li> </ul> </li> </ul> </nav> <!-- Hero Banner --> <section class="hero"> <h2>Welcome to GS TYAZO</h2> <p>Shaping Future Leaders Through Knowledge, Discipline, and Skills</p> </section> <!-- About Section --> <section id="about"> <h2>About GS TYAZO</h2> <p>GS TYAZO is a secondary school dedicated to providing quality education, discipline, and skills to prepare learners for the future. We are committed to fostering academic excellence and character development.</p> </section> <!-- Academics Section --> <section id="academics"> <h2>Academics</h2> <div class="cards"> <div class="card"> <img src="images/science.jpg" alt="Science 1"> <h3>Mathematics and Science Stream 1</h3> </div> <div class="card"> <img src="images/maths.jpg" alt="Science 2"> <h3>Mathematics and Science Stream 2</h3> </div> <div class="card"> <img src="images/economics.jpg" alt="Humanities"> <h3>Art and Humanities</h3> </div> <div class="card"> <img src="images/languages.jpg" alt="Combinations"> <h3>MCE, MCB and HGL</h3> </div> </div> </section> <!-- Activities Section --> <section id="activities"> <h2>Co-Curricular Activities</h2> <ul> <li>⚽ Sports (Football, Volleyball, Basketball)</li> <li>🎤 Debate and Public Speaking</li> <li>💻 ICT Practice</li> <li>🎶 Music and Dance</li> </ul> </section> <!-- Gallery Section --> <section id="gallery"> <h2>Our Gallery</h2> <div class="gallery"> <img src="images/school1.jpg" alt="School Building"> <img src="images/school2.jpg" alt="Students in Class"> <img src="images/school3.jpg" alt="Sports Activity"> </div> </section> <!-- Books Section --> <section id="books"> <h2>Books</h2> <div class="cards"> <div class="card"> <img src="images/book1.jpg" alt="Math Book"> <h3>ICT Content Distribution</h3> <a href="Book1.xlsx" download>📥 Download</a> </div> <div class="card"> <img src="images/book2.jpg" alt="Computer Science Book"> <h3>Computer Science Book</h3> <a href="books/computer_science.pdf" download>📥 Download</a> </div> <div class="card"> <img src="images/book3.jpg" alt="Economics Book"> <h3>Economics Book</h3> <a href="books/economics.pdf" download>📥 Download</a> </div> <div class="card"> <img src="images/book4.jpg" alt="English Book"> <h3>English Book</h3> <a href="books/english.pdf" download>📥 Download</a> </div> </div> </section> <!-- Software Tools Section --> <section id="software"> <h2>Software Tools</h2> <div class="cards"> <div class="card"> <img src="images/xampp.jpg" alt="XAMPP Software"> <h3>XAMPP (Apache Friends)</h3> <a href="https://www.apachefriends.org/download_success.html" target="_blank">🌐 Download</a> </div> <div class="card"> <img src="images/vscode.jpg" alt="VS Code"> <h3>Visual Studio Code</h3> <a href="https://code.visualstudio.com/download" target="_blank">🌐 Download</a> </div> <div class="card"> <img src="images/java.jpg" alt="Java JDK"> <h3>Java Development Kit (JDK)</h3> <a href="https://www.oracle.com/java/technologies/javase-jdk17-downloads.html" target="_blank">🌐 Download</a> </div> <div class="card"> <img src="images/python.jpg" alt="Python"> <h3>Python Programming Language</h3> <a href="https://www.python.org/downloads/" target="_blank">🌐 Download</a> </div> <div class="card"> <img src="images/mysql.jpg" alt="MySQL"> <h3>MySQL Database</h3> <a href="https://dev.mysql.com/downloads/" target="_blank">🌐 Download</a> </div> </div> </section> <!-- Contact Section --> <section id="contact"> <h2>Contact Us</h2> <p>Email: <a href="mailto:tniyigena@gmail.com">tniyigena@gmail.com</a></p> <p>Phone: +250 787539136</p> <p>Address: GS TYAZO, Nyamasheke District, Rwanda</p> </section> <!-- Footer --> <footer> <p>&copy; 2025 GS TYAZO | Designed by Theogene</p> </footer> </body> </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GS TYAZO School</title>
+
+  <!-- Internal CSS -->
+  <style>
+    /* =============================
+       GENERAL STYLES
+    ============================== */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f4f8;
+      color: #333;
+    }
+
+    /* =============================
+       HEADER
+    ============================== */
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      color: white;
+    }
+
+    header img.logo {
+      width: 100px;
+      border-radius: 50%;
+      border: 3px solid white;
+    }
+
+    header h1 {
+      margin: 10px 0 5px;
+      font-size: 36px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    /* =============================
+       NAVIGATION
+    ============================== */
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      background: #007BFF;
+    }
+
+    nav ul li {
+      position: relative;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      padding: 12px 18px;
+      display: block;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav ul li a:hover {
+      background: #0056b3;
+    }
+
+    /* Dropdown */
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 220px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      border-radius: 8px;
+      z-index: 1000;
+    }
+
+    .dropdown-content li a {
+      color: #007BFF;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* =============================
+       HERO SECTION
+    ============================== */
+    .hero {
+      text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(135deg, #43e97b, #38f9d7);
+      color: white;
+    }
+
+    /* =============================
+       SECTIONS
+    ============================== */
+    section {
+      padding: 50px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #007BFF;
+      border-bottom: 3px solid #00f2fe;
+      display: inline-block;
+      margin-bottom: 25px;
+    }
+
+    /* =============================
+       CARDS
+    ============================== */
+    .cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #007BFF;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+    }
+
+    /* =============================
+       GALLERY
+    ============================== */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .gallery img {
+      width: 300px;
+      border-radius: 10px;
+    }
+
+    /* =============================
+       FOOTER
+    ============================== */
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: linear-gradient(90deg, #4facfe, #00f2fe);
+      color: white;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <img src="images/logo.png" alt="GS TYAZO Logo" class="logo">
+    <h1>GS TYAZO</h1>
+    <p>Excellence in Education and Discipline</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#academics">Academics</a></li>
+      <li><a href="#activities">Activities</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#software">Software</a></li>
+      <li><a href="#contact">Contact</a></li>
+
+      <li class="dropdown">
+        <a href="#">Exams Portal ▼</a>
+        <ul class="dropdown-content">
+          <li><a href="https://forms.gle/NVk6wwQhKD8XuyqAA">CS Quiz</a></li>
+          <li><a href="https://forms.gle/Lz1TJpmSCtJX38K89">CS Test</a></li>
+          <li><a href="https://forms.gle/BZJpAUsXVwBTcnjn8">ICT S6 Quiz</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Welcome to GS TYAZO</h2>
+    <p>Shaping Future Leaders Through Knowledge and Skills</p>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>GS TYAZO is a secondary school committed to academic excellence and discipline.</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    &copy; 2025 GS TYAZO | Designed by Theogene
+  </footer>
+
+  <!-- =============================
+       AI CHATBOT (Frontend Ready)
+       ============================= -->
+  <div id="chatbot-toggle">💬</div>
+
+  <div id="chatbot">
+    <div id="chatbot-header">
+      GS TYAZO AI Assistant
+      <span id="chatbot-close">✖</span>
+    </div>
+    <div id="chatbot-messages"></div>
+    <div id="chatbot-input">
+      <input type="text" id="chatbot-text" placeholder="Ask me about GS TYAZO...">
+      <button onclick="sendChat()">Send</button>
+    </div>
+  </div>
+
+  <style>
+    /* =============================
+       CHATBOT STYLES
+       ============================= */
+    #chatbot-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #007BFF;
+      color: white;
+      font-size: 24px;
+      padding: 12px 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #chatbot {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 320px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      overflow: hidden;
+      z-index: 1000;
+    }
+
+    #chatbot-header {
+      background: #007BFF;
+      color: white;
+      padding: 12px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #chatbot-messages {
+      height: 220px;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    #chatbot-input {
+      display: flex;
+      border-top: 1px solid #ddd;
+    }
+
+    #chatbot-input input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+
+    #chatbot-input button {
+      background: #007BFF;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      cursor: pointer;
+    }
+
+    .user { text-align: right; color: #007BFF; margin: 6px 0; }
+    .bot { text-align: left; color: #333; margin: 6px 0; }
+  </style>
+
+  <script>
+    const toggle = document.getElementById('chatbot-toggle');
+    const chatbot = document.getElementById('chatbot');
+    const closeBtn = document.getElementById('chatbot-close');
+    const messages = document.getElementById('chatbot-messages');
+
+    toggle.onclick = () => chatbot.style.display = 'block';
+    closeBtn.onclick = () => chatbot.style.display = 'none';
+
+    function sendChat() {
+      const input = document.getElementById('chatbot-text');
+      const text = input.value.trim();
+      if (!text) return;
+
+      messages.innerHTML += `<div class="user">${text}</div>`;
+      input.value = '';
+
+      let reply = "I'm here to help! Please ask about academics, exams, books, or contact.";
+
+      const q = text.toLowerCase();
+      if (q.includes('hello')) reply = 'Hello 👋 I am the GS TYAZO AI Assistant.';
+      else if (q.includes('location')) reply = 'GS TYAZO is located in Nyamasheke District, Rwanda.';
+      else if (q.includes('contact')) reply = 'Email: tniyigena@gmail.com | Phone: +250 787539136';
+      else if (q.includes('courses') || q.includes('combinations')) reply = 'We offer MCE, MCB, and HGL combinations.';
+      else if (q.includes('books')) reply = 'Visit the Books section to download learning materials.';
+      else if (q.includes('exams')) reply = 'Use the Exams Portal menu to access online tests.';
+
+      setTimeout(() => {
+        messages.innerHTML += `<div class="bot">${reply}</div>`;
+        messages.scrollTop = messages.scrollHeight;
+      }, 400);
+    }
+  </script>
+
+  <!-- =============================
+       AI CHATBOT ADVANCED (API READY)
+       FEATURES:
+       - ChatGPT API ready
+       - English & Kinyarwanda support
+       - Exam & school context
+       ============================= -->
+
+  <script>
+    /* =============================
+       CONFIGURATION (TEACHER SETUP)
+       ============================= */
+    const OPENAI_API_KEY = "PUT_YOUR_API_KEY_HERE"; // Replace when deploying
+
+    async function sendChatAI(message) {
+      // If no API key, fallback to offline AI
+      if (OPENAI_API_KEY === "PUT_YOUR_API_KEY_HERE") {
+        return offlineAI(message);
+      }
+
+      const response = await fetch("https://api.openai.com/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": "Bearer " + OPENAI_API_KEY
+        },
+        body: JSON.stringify({
+          model: "gpt-4o-mini",
+          messages: [
+            { role: "system", content: "You are GS TYAZO school assistant. Answer about academics, exams, books, and school information in English or Kinyarwanda." },
+            { role: "user", content: message }
+          ]
+        })
+      });
+
+      const data = await response.json();
+      return data.choices[0].message.content;
+    }
+
+    function offlineAI(text) {
+      const q = text.toLowerCase();
+
+      if (q.includes('muraho')) return 'Muraho neza! Ndi umufasha wa GS TYAZO 🤝';
+      if (q.includes('amakuru')) return 'Ni meza! Murakoze kubaza.';
+      if (q.includes('hello')) return 'Hello! Welcome to GS TYAZO.';
+      if (q.includes('exams')) return 'Use Exams Portal to access online tests.';
+      if (q.includes('amasomo') || q.includes('courses')) return 'Dutanga MCE, MCB, na HGL.';
+      if (q.includes('books')) return 'Ibitabo biri mu gice cya Books kuri website.';
+      if (q.includes('contact')) return 'Twaboneka kuri tniyigena@gmail.com cyangwa 0787539136.';
+
+      return 'Nditeguye kugufasha ku bijyanye na GS TYAZO.';
+    }
+
+    // Override sendChat with AI version
+    async function sendChat() {
+      const input = document.getElementById('chatbot-text');
+      const text = input.value.trim();
+      if (!text) return;
+
+      messages.innerHTML += `<div class="user">${text}</div>`;
+      input.value = '';
+
+      const reply = await sendChatAI(text);
+
+      messages.innerHTML += `<div class="bot">${reply}</div>`;
+      messages.scrollTop = messages.scrollHeight;
+    }
+  </script>
+
+</body>
+</html>
