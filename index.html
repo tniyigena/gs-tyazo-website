@@ -6,7 +6,7 @@
   <title>GS TYAZO School</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* --- Existing styles --- */
+    /* --- General Styles --- */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       margin: 0;
@@ -14,6 +14,8 @@
       background-color: #f0f4f8;
       color: #333;
     }
+
+    /* --- Header --- */
     header { 
       position: relative; 
       text-align: center; 
@@ -30,7 +32,7 @@
     header h1 { margin: 10px 0 5px 0; font-size: 36px; text-shadow: 1px 1px 2px rgba(0,0,0,0.3); }
     header p { font-size: 18px; font-weight: 500; }
 
-    /* --- Top-right login with animation --- */
+    /* --- Top-right login --- */
     #login-container {
       position: absolute;
       top: 20px;
@@ -38,7 +40,6 @@
       text-align: right;
       z-index: 1000;
     }
-
     #login-toggle {
       padding: 6px 12px;
       font-size: 14px;
@@ -49,11 +50,7 @@
       cursor: pointer;
       transition: 0.3s;
     }
-
-    #login-toggle:hover {
-      background-color: #0056b3;
-    }
-
+    #login-toggle:hover { background-color: #0056b3; }
     #login-form {
       margin-top: 8px;
       background: rgba(255,255,255,0.95);
@@ -69,42 +66,16 @@
       transition: max-height 0.5s ease, opacity 0.5s ease;
       opacity: 0;
     }
-
-    #login-form.show {
-      max-height: 250px;
-      opacity: 1;
-    }
-
-    #login-form input {
-      padding: 6px 8px;
-      font-size: 14px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-    }
-
+    #login-form.show { max-height: 250px; opacity: 1; }
+    #login-form input { padding: 6px 8px; font-size: 14px; border: 1px solid #ccc; border-radius: 4px; }
     #login-form button {
-      background-color: #28a745;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 12px;
-      font-size: 14px;
-      cursor: pointer;
-      transition: 0.3s;
+      background-color: #28a745; color: white; border: none; border-radius: 4px; padding: 6px 12px; font-size: 14px; cursor: pointer; transition: 0.3s;
     }
+    #login-form button:hover { background-color: #218838; }
+    #login-msg { color: red; font-size: 12px; margin: 0; }
 
-    #login-form button:hover {
-      background-color: #218838;
-    }
-
-    #login-msg {
-      color: red;
-      font-size: 12px;
-      margin: 0;
-    }
-
-    /* --- Navigation and other styles remain unchanged --- */
-    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; justify-content: center; background-color: #007BFF; }
+    /* --- Navigation --- */
+    nav ul { list-style: none; padding: 0; margin: 0; display: flex; gap: 15px; justify-content: center; background-color: #007BFF; flex-wrap: wrap; }
     nav ul li { position: relative; }
     nav ul li a { text-decoration: none; padding: 12px 18px; display: block; color: white; font-weight: bold; border-radius: 6px; transition: 0.3s; }
     nav ul li a:hover { background-color: #0056b3; }
@@ -113,10 +84,12 @@
     nav ul li .dropdown-content li a:hover { background-color: #f0f8ff; }
     nav ul li.dropdown:hover .dropdown-content { display: block; }
 
+    /* --- Hero --- */
     .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #43e97b, #38f9d7); color: white; }
     .hero h2 { font-size: 42px; margin-bottom: 15px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }
     .hero p { font-size: 20px; font-weight: 500; }
 
+    /* --- Sections --- */
     section { padding: 50px 20px; max-width: 1100px; margin: auto; }
     section h2 { font-size: 32px; margin-bottom: 25px; color: #007BFF; border-bottom: 3px solid #00f2fe; display: inline-block; padding-bottom: 5px; }
 
@@ -140,7 +113,7 @@
 
     footer { text-align: center; padding: 25px; background: linear-gradient(90deg, #4facfe, #00f2fe); color: white; font-weight: bold; }
 
-    /* Chatbot Styles */
+    /* --- Chatbot --- */
     #chatbot-button { position: fixed; bottom: 20px; right: 20px; background-color: #007BFF; color: white; border: none; border-radius: 50%; width: 60px; height: 60px; font-size: 28px; cursor: pointer; box-shadow: 0 4px 12px rgba(0,0,0,0.3); z-index: 10000; }
     #chatbot-window { display: none; position: fixed; bottom: 90px; right: 20px; width: 350px; max-height: 500px; background: white; border-radius: 10px; box-shadow: 0 8px 24px rgba(0,0,0,0.3); z-index: 10000; flex-direction: column; overflow: hidden; font-family: Arial, sans-serif; }
     #chatbot-header { background-color: #007BFF; color: white; padding: 12px; text-align: center; font-weight: bold; }
@@ -169,7 +142,7 @@
     </div>
   </header>
 
-  <!-- Navigation Menu -->
+  <!-- Navigation -->
   <nav>
     <ul>
       <li><a href="#about">About Us</a></li>
@@ -192,19 +165,86 @@
     </ul>
   </nav>
 
-  <!-- Hero Banner -->
+  <!-- Hero -->
   <section class="hero">
     <h2>Welcome to GS TYAZO</h2>
     <p>Shaping Future Leaders Through Knowledge, Discipline, and Skills</p>
   </section>
 
-  <!-- About Section -->
+  <!-- About -->
   <section id="about">
     <h2>About GS TYAZO</h2>
     <p>GS TYAZO is a secondary school dedicated to providing quality education, discipline, and skills to prepare learners for the future. We are committed to fostering academic excellence and character development.</p>
   </section>
 
-  <!-- Add other sections (Academics, Activities, Gallery, Books, Software Tools, Contact, Footer) here as in your original code -->
+  <!-- Academics -->
+  <section id="academics">
+    <h2>Academics</h2>
+    <div class="cards">
+      <div class="card"><img src="images/science.jpg" alt="Science 1"><h3>Mathematics and Science Stream 1</h3></div>
+      <div class="card"><img src="images/maths.jpg" alt="Science 2"><h3>Mathematics and Science Stream 2</h3></div>
+      <div class="card"><img src="images/economics.jpg" alt="Humanities"><h3>Art and Humanities</h3></div>
+      <div class="card"><img src="images/languages.jpg" alt="Combinations"><h3>MCE, MCB and HGL</h3></div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section id="activities">
+    <h2>Co-Curricular Activities</h2>
+    <ul>
+      <li>⚽ Sports (Football, Volleyball, Basketball)</li>
+      <li>🎤 Debate and Public Speaking</li>
+      <li>💻 ICT Practice</li>
+      <li>🎶 Music and Dance</li>
+    </ul>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Our Gallery</h2>
+    <div class="gallery">
+      <img src="images/school1.jpg" alt="School Building">
+      <img src="images/school2.jpg" alt="Students in Class">
+      <img src="images/school3.jpg" alt="Sports Activity">
+    </div>
+  </section>
+
+  <!-- Books -->
+  <section id="books">
+    <h2>Books</h2>
+    <div class="cards">
+      <div class="card"><img src="images/book1.jpg" alt="Math Book"><h3>ICT Content Distribution</h3><a href="Book1.xlsx" download>📥 Download</a></div>
+      <div class="card"><img src="images/book2.jpg" alt="Computer Science Book"><h3>Computer Science Book</h3><a href="books/computer_science.pdf" download>📥 Download</a></div>
+      <div class="card"><img src="images/book3.jpg" alt="Economics Book"><h3>Economics Book</h3><a href="books/economics.pdf" download>📥 Download</a></div>
+      <div class="card"><img src="images/book4.jpg" alt="English Book"><h3>English Book</h3><a href="books/english.pdf" download>📥 Download</a></div>
+    </div>
+  </section>
+
+  <!-- Software Tools -->
+  <section id="software">
+    <h2>Software Tools</h2>
+    <div class="cards">
+      <div class="card"><img src="images/xampp.jpg" alt="XAMPP Software"><h3>XAMPP (Apache Friends)</h3><a href="https://www.apachefriends.org/download_success.html" target="_blank">🌐 Download</a></div>
+      <div class="card"><img src="images/vscode.jpg" alt="VS Code"><h3>Visual Studio Code</h3><a href="https://code.visualstudio.com/download" target="_blank">🌐 Download</a></div>
+      <div class="card"><img src="images/java.jpg" alt="Java JDK"><h3>Java Development Kit (JDK)</h3><a href="https://www.oracle.com/java/technologies/javase-jdk17-downloads.html" target="_blank">🌐 Download</a></div>
+      <div class="card"><img src="images/python.jpg" alt="Python"><h3>Python Programming Language</h3><a href="https://www.python.org/downloads/" target="_blank">🌐 Download</a></div>
+      <div class="card"><img src="images/mysql.jpg" alt="MySQL"><h3>MySQL Database</h3><a href="https://dev.mysql.com/downloads/" target="_blank">🌐 Download</a></div>
+      <div class="card"><img src="images/mutaz.jpg" alt="Mutaz Software Downloads"><h3>www.mutaz.net</h3><a href="https://www.mutaz.net" target="_blank">🌐 Download Software</a></div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: <a href="mailto:tniyigena@gmail.com">tniyigena@gmail.com</a></p>
+    <p>Phone: +250 787539136</p>
+    <p>Address: GS TYAZO, Nyamasheke District, Rwanda</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GS TYAZO | Designed by Theogene</p>
+  </footer>
 
   <!-- Chatbot -->
   <button id="chatbot-button">💬</button>
@@ -217,6 +257,7 @@
     </div>
   </div>
 
+  <!-- Scripts -->
   <script>
     // Toggle Login Form
     const loginToggle = document.getElementById("login-toggle");
@@ -239,46 +280,4 @@
       }
 
       if (username === "admin" && password === "1234") {
-        loginMsg.style.color = "green";
-        loginMsg.textContent = "Login successful! Welcome " + username;
-      } else {
-        loginMsg.style.color = "red";
-        loginMsg.textContent = "Invalid username or password";
-      }
-    });
-
-    // Chatbot
-    const chatbotBtn = document.getElementById('chatbot-button');
-    const chatbotWindow = document.getElementById('chatbot-window');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    const chatbotInput = document.getElementById('chatbot-text');
-    const chatbotSend = document.getElementById('chatbot-send');
-
-    chatbotBtn.addEventListener('click', () => {
-      chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
-    });
-
-    chatbotSend.addEventListener('click', () => {
-      const message = chatbotInput.value.trim();
-      if(message === '') return;
-
-      const userMsg = document.createElement('div');
-      userMsg.textContent = "You: " + message;
-      userMsg.style.marginBottom = "8px";
-      chatbotMessages.appendChild(userMsg);
-
-      const botMsg = document.createElement('div');
-      botMsg.textContent = "Bot: Hello! I am an AI assistant. How can I help you today?";
-      botMsg.style.marginBottom = "8px";
-      chatbotMessages.appendChild(botMsg);
-
-      chatbotInput.value = '';
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    });
-
-    chatbotInput.addEventListener("keypress", function(e) {
-      if(e.key === "Enter") chatbotSend.click();
-    });
-  </script>
-</body>
-</html>
+        loginMsg.style.color = "green
