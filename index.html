@@ -225,7 +225,7 @@
       font-weight: bold;
     }
 
-    /* --- Chatbot Styles --- */
+    /* Chatbot Styles */
     #chatbot-button {
       position: fixed;
       bottom: 20px;
@@ -465,7 +465,7 @@
 
   <!-- Chatbot Window -->
   <div id="chatbot-window">
-    <div id="chatbot-header">Chatbot</div>
+    <div id="chatbot-header">AI Chatbot</div>
     <div id="chatbot-messages"></div>
     <div id="chatbot-input">
       <input type="text" id="chatbot-text" placeholder="Type your message..." />
@@ -473,8 +473,8 @@
     </div>
   </div>
 
+  <!-- AI Chatbot Script -->
   <script>
-    // Chatbot toggle
     const chatbotBtn = document.getElementById('chatbot-button');
     const chatbotWindow = document.getElementById('chatbot-window');
     const chatbotMessages = document.getElementById('chatbot-messages');
@@ -485,29 +485,45 @@
       chatbotWindow.style.display = chatbotWindow.style.display === 'flex' ? 'none' : 'flex';
     });
 
-    chatbotSend.addEventListener('click', () => {
+    async function sendMessage() {
       const message = chatbotInput.value.trim();
-      if(message === '') return;
+      if (!message) return;
 
+      // User message
       const userMsg = document.createElement('div');
       userMsg.textContent = "You: " + message;
       userMsg.style.marginBottom = "8px";
       chatbotMessages.appendChild(userMsg);
 
-      // Simple automated response
-      const botMsg = document.createElement('div');
-      botMsg.textContent = "Bot: Hello! How can I help you today?";
-      botMsg.style.marginBottom = "8px";
-      chatbotMessages.appendChild(botMsg);
-
       chatbotInput.value = '';
       chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    });
 
+      // Bot typing message
+      const botMsg = document.createElement('div');
+      botMsg.textContent = "Bot: Typing...";
+      botMsg.style.marginBottom = "8px";
+      chatbotMessages.appendChild(botMsg);
+      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+
+      try {
+        const response = await fetch("http://localhost:3000/chat", {  // Replace with your server endpoint
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message })
+        });
+
+        const data = await response.json();
+        botMsg.textContent = "Bot: " + data.reply;
+        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+      } catch (error) {
+        botMsg.textContent = "Bot: Sorry, something went wrong!";
+      }
+    }
+
+    chatbotSend.addEventListener('click', sendMessage);
     chatbotInput.addEventListener("keypress", function(e) {
-      if(e.key === "Enter") chatbotSend.click();
+      if(e.key === "Enter") sendMessage();
     });
   </script>
 </body>
 </html>
-
